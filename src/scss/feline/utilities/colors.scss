@@ -8,6 +8,7 @@ $off-black: #2a2a2a;
 $white: #fff;
 $gray: #ccc;
 $light-orange: #FFC160;
+$yellow: #fceb02;
 
 .text-purple { color: $nbn-purple !important; }
 .text-nbn-purple { color: $nbn-purple !important; }
@@ -19,6 +20,7 @@ $light-orange: #FFC160;
 .text-white { color: $white !important; }
 .text-gray { color: $gray !important; }
 .text-light-orange { color: $light-orange !important; }
+.text-yellow { color: $yellow !important; }
 
 .fill-purple { background-color: $nbn-purple !important; }
 .fill-nbn-purple { background-color: $nbn-purple !important; }
@@ -30,6 +32,7 @@ $light-orange: #FFC160;
 .fill-white { background-color: $white !important; }
 .fill-gray { background-color: $gray !important; }
 .fill-light-orange { background-color: $light-orange !important; }
+.fill-yellow { background-color: $yellow !important; }
 
 .link-purple {
   color: $nbn-purple !important;

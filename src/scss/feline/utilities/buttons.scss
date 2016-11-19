@@ -129,8 +129,8 @@
   @include button-style($light-purple, $white);
 }
 
-.button--light-orange {
-  @include button-style($light-orange, $white);
+.button--yellow {
+  @include button-style($yellow, $dark-purple);
 }
 
 

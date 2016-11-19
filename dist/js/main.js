@@ -17405,7 +17405,7 @@
 	    + alias2(alias1(((stack1 = (depth0 != null ? depth0.properties : depth0)) != null ? stack1.distanceString : stack1), depth0))
 	    + "</p>\n    </div>\n\n    <figure class=\"xs-mt2\">\n      <img src=\"http://placekitten.com/600/400\" alt=\"\" class=\"xs-full-width\"/>\n    </figure>\n\n    <div class=\"clearfix\">\n      <p class=\"col xs-col-12 sm-col-7\">"
 	    + alias2(alias1(((stack1 = (depth0 != null ? depth0.properties : depth0)) != null ? stack1.description : stack1), depth0))
-	    + "</p>\n      <button type=\"button\" name=\"button\" class=\"button button--light-purple xs-col-12 sm-col-4 sm-offset-1 xs-my2\">Take me there</button>\n    </div>\n\n  </div>\n";
+	    + "</p>\n      <button type=\"button\" name=\"button\" class=\"button button--yellow xs-col-12 sm-col-4 sm-offset-1 xs-my2\">Take me there</button>\n    </div>\n\n  </div>\n";
 	},"2":function(container,depth0,helpers,partials,data) {
 	    var stack1;
 

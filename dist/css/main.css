@@ -1470,6 +1470,8 @@ body, .sans { font-family: "Source Sans Pro", Helvetica, sans-serif; }
 
 .text-light-orange { color: #FFC160 !important; }
 
+.text-yellow { color: #fceb02 !important; }
+
 .fill-purple { background-color: #501F84 !important; }
 
 .fill-nbn-purple { background-color: #501F84 !important; }
@@ -1489,6 +1491,8 @@ body, .sans { font-family: "Source Sans Pro", Helvetica, sans-serif; }
 .fill-gray { background-color: #ccc !important; }
 
 .fill-light-orange { background-color: #FFC160 !important; }
+
+.fill-yellow { background-color: #fceb02 !important; }
 
 .link-purple, a { color: #501F84 !important; }
 
@@ -1652,23 +1656,23 @@ body, .sans { font-family: "Source Sans Pro", Helvetica, sans-serif; }
 
 .button--light-purple.button--secondary.button--icon:not(.button--disabled):not(:disabled):hover svg { fill: #fff !important; }
 
-.button--light-orange { background-color: #FFC160 !important; color: #fff !important; border-color: #FFC160 !important; border: 1px solid transparent             !important; transition: background-color .1s ease 0s  !important; }
+.button--yellow { background-color: #fceb02 !important; color: #10015d !important; border-color: #fceb02 !important; border: 1px solid transparent             !important; transition: background-color .1s ease 0s  !important; }
 
-.button--light-orange:not(.button--disabled):not(:disabled):hover { background-color: #f99800 !important; transition: background-color .15s ease 0s  !important; color: white !important; }
+.button--yellow:not(.button--disabled):not(:disabled):hover { background-color: #978d01 !important; transition: background-color .15s ease 0s  !important; color: white !important; }
 
-.button--light-orange:not(.button--disabled):not(:disabled):active { background-color: #ad6900 !important; }
+.button--yellow:not(.button--disabled):not(:disabled):active { background-color: #4b4601 !important; }
 
-.button--light-orange.button--secondary { border: 1px solid #FFC160 !important; color: #FFC160 !important; background: none              !important; }
+.button--yellow.button--secondary { border: 1px solid #fceb02 !important; color: #fceb02 !important; background: none              !important; }
 
-.button--light-orange.button--secondary:hover { transition: background-color .15s ease 0s  !important; }
+.button--yellow.button--secondary:hover { transition: background-color .15s ease 0s  !important; }
 
-.button--light-orange.button--secondary:not(.button--disabled):not(:disabled):hover { background-color: #FFC160 !important; color: #fff !important; }
+.button--yellow.button--secondary:not(.button--disabled):not(:disabled):hover { background-color: #fceb02 !important; color: #10015d !important; }
 
-.button--light-orange.button--secondary:not(.button--disabled):not(:disabled):active { background-color: #ad6900 !important; border-color: #ad6900 !important; color: #fff !important; }
+.button--yellow.button--secondary:not(.button--disabled):not(:disabled):active { background-color: #4b4601 !important; border-color: #4b4601 !important; color: #10015d !important; }
 
-.button--light-orange.button--secondary.button--icon > svg { fill: #FFC160 !important; }
+.button--yellow.button--secondary.button--icon > svg { fill: #fceb02 !important; }
 
-.button--light-orange.button--secondary.button--icon:not(.button--disabled):not(:disabled):hover svg { fill: #fff !important; }
+.button--yellow.button--secondary.button--icon:not(.button--disabled):not(:disabled):hover svg { fill: #fff !important; }
 
 .button--white { background-color: #fff !important; color: #ccc !important; border-color: #fff !important; border: 1px solid transparent             !important; transition: background-color .1s ease 0s  !important; }
 
