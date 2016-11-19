@@ -40,3 +40,4 @@ jspm_packages
 .nbn_google_drive_fetch_token.json
 
 dist
+.env
