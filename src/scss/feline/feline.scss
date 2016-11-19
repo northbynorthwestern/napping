@@ -1,8 +1,11 @@
-@import './bin/normalize';
 
 @import 'helpers/variables';
 @import 'helpers/breakpoints';
 @import 'helpers/mixins';
+
+@import 'base/normalize';
+@import 'base/base';
+@import 'base/typography';
 
 $generate-responsive-classes: true !default;
 $container-width: 900px;

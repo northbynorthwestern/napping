@@ -49,6 +49,8 @@ function updateDOM(data) {
 
 function processFeatureProperty(feature) {
   feature.properties.distanceString = makeDistanceString(feature.properties.distance)
+  feature.properties.directionsLink = makeMapLink(feature.geometry.coordinates)
+  console.log(feature);
   return feature;
 }
 
@@ -58,6 +60,11 @@ function makeDistanceString(dist) {
   } else {
     return Math.round(dist * 5280.0) + " ft";
   };
+}
+
+function makeMapLink(coords) {
+  appleLink = "http://maps.apple.com/?dirflg=w?daddr=" + coords[0] + "," + coords[1]
+  return appleLink
 }
 
 function NBNGeoTools() {

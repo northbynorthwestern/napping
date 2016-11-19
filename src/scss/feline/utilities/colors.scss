@@ -7,7 +7,8 @@ $off-white: #fafafa;
 $off-black: #2a2a2a;
 $white: #fff;
 $gray: #ccc;
-$light-orange: #FFC160;
+$light-gray: #fafafa;
+$orange: #f99800;
 $yellow: #fceb02;
 
 .text-purple { color: $nbn-purple !important; }
@@ -19,7 +20,8 @@ $yellow: #fceb02;
 .text-off-black { color: $off-black !important; }
 .text-white { color: $white !important; }
 .text-gray { color: $gray !important; }
-.text-light-orange { color: $light-orange !important; }
+.text-light-gray { color: $light-gray !important; }
+.text-orange { color: $orange !important; }
 .text-yellow { color: $yellow !important; }
 
 .fill-purple { background-color: $nbn-purple !important; }
@@ -31,8 +33,23 @@ $yellow: #fceb02;
 .fill-off-black { background-color: $off-black !important; }
 .fill-white { background-color: $white !important; }
 .fill-gray { background-color: $gray !important; }
-.fill-light-orange { background-color: $light-orange !important; }
+.fill-light-gray { background-color: $light-gray !important; }
+.fill-light-orange { background-color: $orange !important; }
 .fill-yellow { background-color: $yellow !important; }
+
+.svg-fill-purple { fill: $nbn-purple !important; }
+.svg-fill-nbn-purple { fill: $nbn-purple !important; }
+.svg-fill-dark-purple { fill: $dark-purple !important; }
+.svg-fill-light-purple { fill: $light-purple !important; }
+.svg-fill-lightest-purple { fill: $lightest-purple !important; }
+.svg-fill-off-white { fill: $off-white !important; }
+.svg-fill-off-black { fill: $off-black !important; }
+.svg-fill-white { fill: $white !important; }
+.svg-fill-gray { fill: $gray !important; }
+.svg-fill-light-gray { fill: $light-gray !important; }
+.svg-fill-light-orange { fill: $orange !important; }
+.svg-fill-yellow { fill: $yellow !important; }
+
 
 .link-purple {
   color: $nbn-purple !important;
@@ -53,4 +70,9 @@ $yellow: #fceb02;
 .nbn-logo--inverse {
   .nbn-logo--background { fill: $white !important; }
   .nbn-logo--foreground { fill: $nbn-purple !important; }
+}
+
+.nbn-logo--dark-purple {
+  .nbn-logo--background { fill: $white !important; }
+  .nbn-logo--foreground { fill: $dark-purple !important; }
 }

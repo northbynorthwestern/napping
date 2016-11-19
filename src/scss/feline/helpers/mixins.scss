@@ -1,3 +1,26 @@
+// hide from humans not screen readers
+@mixin visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px; margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+// include an svg icon as a background image using variables
+@function svg-background($svg-variable) {
+  @return url("data:image/svg+xml,#{$svg-variable}");
+}
+
+
+// Prefix
+// -------------------------
+// CSS vendor prefix mixin for desktops
+// e.g. p {@include prefix((transform: translate(-50%, -50%)), webkit ms);}
+// Credit: http://www.sitepoint.com/sass-mixins-kickstart-project/
+
 @mixin prefix($map, $vendors: webkit moz ms o) {
 
   @each $prop, $value in $map {
@@ -13,4 +36,62 @@
     #{$prop}: #{$value};
 
   }
+}
+
+// Keyframes
+// -------------------------
+
+@mixin keyframes($animation-name) {
+  @-webkit-keyframes #{$animation-name} {
+    @content;
+  }
+  @-moz-keyframes #{$animation-name} {
+    @content;
+  }
+  @keyframes #{$animation-name} {
+    @content;
+  }
+}
+
+// Enables tabular figures in opentype compatible browsers
+// http://thenewcode.com/575/Elegant-Table-Data-With-OpenType
+@mixin tabular-figures {
+  font-variant-numeric: tabular-nums;
+  -moz-font-feature-settings:"tnum" 1; // Firefox 31+
+  -moz-font-feature-settings:"tnum=1";
+  -webkit-font-feature-settings: 'tnum' 1; // Chrome 31+, Android 4.4+, Opera 24+
+  font-feature-settings: 'tnum' 1; // IE10+
+}
+
+
+// Font Smoothing
+// This will be enabled automatically when using the .slab class.
+// You may want to disable it for performance reasons, since these styles will cascade down.
+// https://davidwalsh.name/font-smoothing
+// ------------------------------
+
+@mixin font-smoothing {
+	@if $font-smoothing == true { // Font smoothing variable exists in the variables partial and can be overridden;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+} @else {
+	-webkit-font-smoothing: subpixel-antialiased;
+	-moz-osx-font-smoothing: auto;
+	}
+}
+
+// @TODO Remove in 4.0, renamed to solid-breakpoint above
+
+@mixin media-query($breakpoint) {
+    @if (map-has-key($breakpoints, $breakpoint) != true) {
+      @error "Media query mixin requires a valid Solid breakpoint";
+    }
+    @else if(map-get($breakpoints, $breakpoint)) == null {
+      @content;
+    }
+    @else {
+      @media (min-width: #{map-get($breakpoints, $breakpoint)}) {
+        @content;
+      }
+    }
 }
