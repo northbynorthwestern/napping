@@ -1,0 +1,19 @@
+{{#each features}}
+  <div class="location xs-border-bottom xs-pb4">
+    <div class="flex xs-flex-justify-between xs-flex-align-start xs-pt4">
+      <div class="xs-flex-auto">
+        <h3 class="xs-mt0 xs-mb05 slab">{{this.properties.name}}</h3>
+        {{#if this.properties.subhead}}<h4 class="xs-mt05 xs-mb0">{{this.properties.subhead}}</h3>{{/if}}
+      </div>
+      <p class="distance xs-flex-auto xs-my0 xs-text-right bold">{{this.properties.distanceString}}</p>
+    </div>
+    <div class="flex">
+      <p class="">{{this.properties.description}}</p>
+      <button type="button" name="button" class="btn--direction">Get Directions</button>
+    </div>
+
+    <figure class="">
+      <img src="http://placekitten.com/600/400" alt="" class="xs-full-width"/>
+    </figure>
+  </div>
+{{/each}}

@@ -1,0 +1,10 @@
+{
+    "copyDir": "./src/data",
+    "files": [{
+      "fileId": "1ow7ytX6TBMsl-yjs6ZSPT_gDYsta0lFg2MWvcXhJUnc",
+      "type": "sheet",
+      "name": "copy",
+      "copytext": { "processor": "table" }
+    }],
+    "yamlPath": "./src/data/data.yml"
+}

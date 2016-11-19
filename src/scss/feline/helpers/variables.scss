@@ -1,0 +1,46 @@
+// Overrides for BassCcss
+$caps-letter-spacing: .1em !default;
+
+$breakpoint-sm: 30rem !default;
+$breakpoint-md: 48rem !default;
+$breakpoint-lg: 64rem !default;
+
+$container-width: 1024px;
+
+$z1: 100 !default;
+$z2: 200 !default;
+$z3: 300 !default;
+$z4: 400 !default;
+
+$space-05: .25rem;//  4px
+$space-1: .5rem;  //  8px
+$space-2:   1rem; // 16px
+$space-3: 1.5rem; // 24px
+$space-4:   2rem; // 32px
+$space-5:   3rem; // 48px
+$space-6: 4.5rem; // 72px
+
+$base-font-size: 16px;
+
+$text-1: 1.75rem;   // 28px
+$text-2: 1.375rem;  // 22px
+$text-3: 1.125rem;  // 18px
+$text-4: 1rem;      // 16px
+$text-5: .875rem;   // 14px
+$text-6: .75rem;    // 12px
+
+$regular: 400;
+$bold: 600;
+
+$line-height-1: 1.2; // set on h1-h3 and .text-1-.text-3
+$line-height-2: 1.3; // set on h4-h6 and .text-4-.text-6
+$line-height-3: 1.5; // default line-height set on the body
+
+$line-height-form: 1.5rem !default;
+$line-height-form-small: 1.25rem !default;
+
+$opacity-disabled: .3 !default;
+
+$slab: 'adelle', Georgia, serif;
+$accent: 'letter-gothic-std', Helvetica, sans-serif;
+$sans: "Source Sans Pro", Helvetica, sans-serif;

@@ -1,0 +1,53 @@
+$nbn-purple: #501F84;
+$purple: $nbn-purple;
+$dark-purple: #10015d;
+$light-purple: desaturate(lighten($purple, 20%), 30%);
+$lightest-purple: desaturate(lighten($purple, 60%), 40%);
+$off-white: #fafafa;
+$off-black: #2a2a2a;
+$white: #fff;
+$gray: #ccc;
+$light-orange: #FFC160;
+
+.text-purple { color: $nbn-purple !important; }
+.text-nbn-purple { color: $nbn-purple !important; }
+.text-dark-purple { color: $dark-purple !important; }
+.text-light-purple { color: $light-purple !important; }
+.text-lightest-purple { color: $lightest-purple !important; }
+.text-off-white { color: $off-white !important; }
+.text-off-black { color: $off-black !important; }
+.text-white { color: $white !important; }
+.text-gray { color: $gray !important; }
+.text-light-orange { color: $light-orange !important; }
+
+.fill-purple { background-color: $nbn-purple !important; }
+.fill-nbn-purple { background-color: $nbn-purple !important; }
+.fill-dark-purple { background-color: $dark-purple !important; }
+.fill-light-purple { background-color: $light-purple !important; }
+.fill-lightest-purple { background-color: $lightest-purple !important; }
+.fill-off-white { background-color: $off-white !important; }
+.fill-off-black { background-color: $off-black !important; }
+.fill-white { background-color: $white !important; }
+.fill-gray { background-color: $gray !important; }
+.fill-light-orange { background-color: $light-orange !important; }
+
+.link-purple {
+  color: $nbn-purple !important;
+  &:hover { color: darken($nbn-purple, 20%) !important; }
+}
+
+.link-gray {
+  color: $gray !important;
+  &:hover { color: $nbn-purple !important; }
+}
+
+.link-off-white {
+  color: $off-white !important;
+  &:hover { color: darken($off-white, 20%) !important; }
+}
+
+
+.nbn-logo--inverse {
+  .nbn-logo--background { fill: $white !important; }
+  .nbn-logo--foreground { fill: $nbn-purple !important; }
+}

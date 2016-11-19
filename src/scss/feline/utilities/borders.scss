@@ -1,0 +1,32 @@
+$border: 1px solid $gray;
+$border-purple: 1px solid $nbn-purple;
+
+$border-radius: 3px;
+
+.rounded {        border-radius: $border-radius                       !important; }
+.rounded-top {    border-radius: $border-radius $border-radius 0 0    !important; }
+.rounded-right {  border-radius: 0 $border-radius $border-radius 0    !important; }
+.rounded-bottom { border-radius: 0 0 $border-radius $border-radius    !important; }
+.rounded-left {   border-radius: $border-radius 0 0 $border-radius    !important; }
+.circle {         border-radius: 50%                                  !important; }
+
+@include generate-breakpoint-prefixes {
+  &border        { border: $border        !important; }
+  &border-top    { border-top: $border    !important; }
+  &border-right  { border-right: $border  !important; }
+  &border-bottom { border-bottom: $border !important; }
+  &border-left   { border-left: $border   !important; }
+
+  &border-purple        { border: $border-purple        !important; }
+  &border-purple-top    { border-top: $border-purple    !important; }
+  &border-purple-right  { border-right: $border-purple  !important; }
+  &border-purple-bottom { border-bottom: $border-purple !important; }
+  &border-purple-left   { border-left: $border-purple   !important; }
+
+
+  &border-none        { border: none        !important; }
+  &border-top-none    { border-top: none    !important; }
+  &border-right-none  { border-right: none  !important; }
+  &border-bottom-none { border-bottom: none !important; }
+  &border-left-none   { border-left: none   !important; }
+}
