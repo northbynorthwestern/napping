@@ -7,13 +7,15 @@
       </div>
       <p class="distance xs-flex-auto xs-my0 xs-text-right bold">{{this.properties.distanceString}}</p>
     </div>
-    <div class="flex">
-      <p class="">{{this.properties.description}}</p>
-      <button type="button" name="button" class="btn--direction">Get Directions</button>
-    </div>
 
-    <figure class="">
+    <figure class="xs-mt2">
       <img src="http://placekitten.com/600/400" alt="" class="xs-full-width"/>
     </figure>
+
+    <div class="clearfix">
+      <p class="col xs-col-12">{{this.properties.description}}</p>
+      <button type="button" name="button" class="button button--light-purple xs-col-12 sm-col-8 sm-offset-2 xs-mb2">Get Directions</button>
+    </div>
+
   </div>
 {{/each}}

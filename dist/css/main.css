@@ -1600,9 +1600,9 @@ body, .sans { font-family: "Source Sans Pro", Helvetica, sans-serif; }
 
 .button, .button:active:focus { outline: 0 !important; }
 
-.button:not(.button--disabled):not(:disabled):hover { background-color: #835dac !important; transition: background-color .15s ease 0s  !important; color: white !important; }
+.button:not(.button--disabled):not(:disabled):hover { background-color: #1e0c31 !important; transition: background-color .15s ease 0s  !important; color: white !important; }
 
-.button:not(.button--disabled):not(:disabled):active { background-color: #9d7fbd !important; }
+.button:not(.button--disabled):not(:disabled):active { background-color: black !important; }
 
 .button.button--secondary { border: 1px solid #501F84 !important; color: #501F84 !important; background: none              !important; }
 
@@ -1618,9 +1618,9 @@ body, .sans { font-family: "Source Sans Pro", Helvetica, sans-serif; }
 
 .button--negative { background-color: red !important; color: #fff !important; border-color: red !important; border: 1px solid transparent             !important; transition: background-color .1s ease 0s  !important; }
 
-.button--negative:not(.button--disabled):not(:disabled):hover { background-color: #835dac !important; transition: background-color .15s ease 0s  !important; color: white !important; }
+.button--negative:not(.button--disabled):not(:disabled):hover { background-color: #990000 !important; transition: background-color .15s ease 0s  !important; color: white !important; }
 
-.button--negative:not(.button--disabled):not(:disabled):active { background-color: #9d7fbd !important; }
+.button--negative:not(.button--disabled):not(:disabled):active { background-color: #4d0000 !important; }
 
 .button--negative.button--secondary { border: 1px solid red !important; color: red !important; background: none              !important; }
 
@@ -1634,11 +1634,47 @@ body, .sans { font-family: "Source Sans Pro", Helvetica, sans-serif; }
 
 .button--negative.button--secondary.button--icon:not(.button--disabled):not(:disabled):hover svg { fill: #fff !important; }
 
+.button--light-purple { background-color: #835dac !important; color: #fff !important; border-color: #835dac !important; border: 1px solid transparent             !important; transition: background-color .1s ease 0s  !important; }
+
+.button--light-purple:not(.button--disabled):not(:disabled):hover { background-color: #51376c !important; transition: background-color .15s ease 0s  !important; color: white !important; }
+
+.button--light-purple:not(.button--disabled):not(:disabled):active { background-color: #2b1d39 !important; }
+
+.button--light-purple.button--secondary { border: 1px solid #835dac !important; color: #835dac !important; background: none              !important; }
+
+.button--light-purple.button--secondary:hover { transition: background-color .15s ease 0s  !important; }
+
+.button--light-purple.button--secondary:not(.button--disabled):not(:disabled):hover { background-color: #835dac !important; color: #fff !important; }
+
+.button--light-purple.button--secondary:not(.button--disabled):not(:disabled):active { background-color: #2b1d39 !important; border-color: #2b1d39 !important; color: #fff !important; }
+
+.button--light-purple.button--secondary.button--icon > svg { fill: #835dac !important; }
+
+.button--light-purple.button--secondary.button--icon:not(.button--disabled):not(:disabled):hover svg { fill: #fff !important; }
+
+.button--light-orange { background-color: #FFC160 !important; color: #fff !important; border-color: #FFC160 !important; border: 1px solid transparent             !important; transition: background-color .1s ease 0s  !important; }
+
+.button--light-orange:not(.button--disabled):not(:disabled):hover { background-color: #f99800 !important; transition: background-color .15s ease 0s  !important; color: white !important; }
+
+.button--light-orange:not(.button--disabled):not(:disabled):active { background-color: #ad6900 !important; }
+
+.button--light-orange.button--secondary { border: 1px solid #FFC160 !important; color: #FFC160 !important; background: none              !important; }
+
+.button--light-orange.button--secondary:hover { transition: background-color .15s ease 0s  !important; }
+
+.button--light-orange.button--secondary:not(.button--disabled):not(:disabled):hover { background-color: #FFC160 !important; color: #fff !important; }
+
+.button--light-orange.button--secondary:not(.button--disabled):not(:disabled):active { background-color: #ad6900 !important; border-color: #ad6900 !important; color: #fff !important; }
+
+.button--light-orange.button--secondary.button--icon > svg { fill: #FFC160 !important; }
+
+.button--light-orange.button--secondary.button--icon:not(.button--disabled):not(:disabled):hover svg { fill: #fff !important; }
+
 .button--white { background-color: #fff !important; color: #ccc !important; border-color: #fff !important; border: 1px solid transparent             !important; transition: background-color .1s ease 0s  !important; }
 
-.button--white:not(.button--disabled):not(:disabled):hover { background-color: #835dac !important; transition: background-color .15s ease 0s  !important; color: white !important; }
+.button--white:not(.button--disabled):not(:disabled):hover { background-color: #cccccc !important; transition: background-color .15s ease 0s  !important; color: white !important; }
 
-.button--white:not(.button--disabled):not(:disabled):active { background-color: #9d7fbd !important; }
+.button--white:not(.button--disabled):not(:disabled):active { background-color: #a6a6a6 !important; }
 
 .button--white.button--secondary { border: 1px solid #fff !important; color: #fff !important; background: none              !important; }
 
@@ -1679,5 +1715,3 @@ body, .sans { font-family: "Source Sans Pro", Helvetica, sans-serif; }
 .location:last-of-type { border-bottom: none !important; }
 
 .distance { flex-basis: 7rem; }
-
-.btn--direction { flex-basis: 20rem; }

@@ -9,6 +9,8 @@ const fetch = require('./fetch')
 const htmlToArchieML = require('./html-to-archieml')
 const xlsxToCopyText = require('./xlsx-to-copytext')
 
+require('dotenv').config();
+
 fetch(config.files, (err, data, file) => {
   if (err) throw err
 
@@ -25,7 +27,7 @@ fetch(config.files, (err, data, file) => {
   if (file.type === 'sheet') {
     xlsxToCopyText(data, file.copytext, (err, d) => {
       if (err) throw err
-      console.log(filePath)
+      console.log(filePath);
       fs.writeFileSync(filePath, JSON.stringify(d, null, 2))
       logDownload(file.name, file.fileId, 'cyan')
     })

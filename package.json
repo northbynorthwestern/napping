@@ -6,6 +6,7 @@
   "main": "app.js",
   "dependencies": {
     "copytext": "^2.1.0",
+    "dotenv": "^2.0.0",
     "handlebars": "^4.0.5",
     "handlebars-loader": "^1.4.0",
     "http-server": "^0.9.0",

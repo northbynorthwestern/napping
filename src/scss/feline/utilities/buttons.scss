@@ -46,8 +46,8 @@
 
 @mixin button-style($fill-color, $text-color, $secondary-text-color:$fill-color, $secondary-hover-text-color:$text-color) {
   //button state colors
-  $hover-background-color:  $light-purple;
-  $active-background-color: lighten($light-purple, 10%);
+  $hover-background-color:  darken($fill-color, 20%);
+  $active-background-color: darken($fill-color, 35%);
   $secondary-active-background-color: darken($fill-color, 35%);
 
   //base style
@@ -124,6 +124,15 @@
 .button--negative {
   @include button-style(rgb(255,0,0), $white);
 }
+
+.button--light-purple {
+  @include button-style($light-purple, $white);
+}
+
+.button--light-orange {
+  @include button-style($light-orange, $white);
+}
+
 
 .button--white {
   @include button-style($white, $gray);
