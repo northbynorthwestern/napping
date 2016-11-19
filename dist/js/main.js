@@ -102,6 +102,8 @@
 
 	function processFeatureProperty(feature) {
 	  feature.properties.distanceString = makeDistanceString(feature.properties.distance)
+	  feature.properties.directionsLink = makeMapLink(feature.geometry.coordinates)
+	  console.log(feature);
 	  return feature;
 	}
 
@@ -111,6 +113,11 @@
 	  } else {
 	    return Math.round(dist * 5280.0) + " ft";
 	  };
+	}
+
+	function makeMapLink(coords) {
+	  appleLink = "http://maps.apple.com/?dirflg=w?daddr=" + coords[0] + "," + coords[1]
+	  return appleLink
 	}
 
 	function NBNGeoTools() {
@@ -17405,7 +17412,9 @@
 	    + alias2(alias1(((stack1 = (depth0 != null ? depth0.properties : depth0)) != null ? stack1.distanceString : stack1), depth0))
 	    + "</p>\n    </div>\n\n    <figure class=\"xs-mt2\">\n      <img src=\"http://placekitten.com/600/400\" alt=\"\" class=\"xs-full-width\"/>\n    </figure>\n\n    <div class=\"clearfix\">\n      <p class=\"col xs-col-12 sm-col-7\">"
 	    + alias2(alias1(((stack1 = (depth0 != null ? depth0.properties : depth0)) != null ? stack1.description : stack1), depth0))
-	    + "</p>\n      <button type=\"button\" name=\"button\" class=\"button button--yellow xs-col-12 sm-col-4 sm-offset-1 xs-my2\">Take me there</button>\n    </div>\n\n  </div>\n";
+	    + "</p>\n      <a href=\""
+	    + alias2(alias1((depth0 != null ? depth0.directionsLink : depth0), depth0))
+	    + "\" class=\"button button--orange xs-col-12 sm-col-4 sm-offset-1 sm-my2\">Take me there</a>\n    </div>\n\n  </div>\n";
 	},"2":function(container,depth0,helpers,partials,data) {
 	    var stack1;
 

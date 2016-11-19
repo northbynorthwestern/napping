@@ -133,6 +133,11 @@
   @include button-style($yellow, $dark-purple);
 }
 
+.button--orange {
+  @include button-style($orange, $white);
+}
+
+
 
 .button--white {
   @include button-style($white, $gray);

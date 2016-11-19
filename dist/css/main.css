@@ -1468,7 +1468,9 @@ body, .sans { font-family: "Source Sans Pro", Helvetica, sans-serif; }
 
 .text-gray { color: #ccc !important; }
 
-.text-light-orange { color: #FFC160 !important; }
+.text-light-gray { color: #fafafa !important; }
+
+.text-orange { color: #f99800 !important; }
 
 .text-yellow { color: #fceb02 !important; }
 
@@ -1490,9 +1492,35 @@ body, .sans { font-family: "Source Sans Pro", Helvetica, sans-serif; }
 
 .fill-gray { background-color: #ccc !important; }
 
-.fill-light-orange { background-color: #FFC160 !important; }
+.fill-light-gray { background-color: #fafafa !important; }
+
+.fill-light-orange { background-color: #f99800 !important; }
 
 .fill-yellow { background-color: #fceb02 !important; }
+
+.svg-fill-purple { fill: #501F84 !important; }
+
+.svg-fill-nbn-purple { fill: #501F84 !important; }
+
+.svg-fill-dark-purple { fill: #10015d !important; }
+
+.svg-fill-light-purple { fill: #835dac !important; }
+
+.svg-fill-lightest-purple { fill: #eae6ef !important; }
+
+.svg-fill-off-white { fill: #fafafa !important; }
+
+.svg-fill-off-black { fill: #2a2a2a !important; }
+
+.svg-fill-white { fill: #fff !important; }
+
+.svg-fill-gray { fill: #ccc !important; }
+
+.svg-fill-light-gray { fill: #fafafa !important; }
+
+.svg-fill-light-orange { fill: #f99800 !important; }
+
+.svg-fill-yellow { fill: #fceb02 !important; }
 
 .link-purple, a { color: #501F84 !important; }
 
@@ -1509,6 +1537,10 @@ body, .sans { font-family: "Source Sans Pro", Helvetica, sans-serif; }
 .nbn-logo--inverse .nbn-logo--background { fill: #fff !important; }
 
 .nbn-logo--inverse .nbn-logo--foreground { fill: #501F84 !important; }
+
+.nbn-logo--dark-purple .nbn-logo--background { fill: #fff !important; }
+
+.nbn-logo--dark-purple .nbn-logo--foreground { fill: #10015d !important; }
 
 .rounded { border-radius: 3px !important; }
 
@@ -1673,6 +1705,24 @@ body, .sans { font-family: "Source Sans Pro", Helvetica, sans-serif; }
 .button--yellow.button--secondary.button--icon > svg { fill: #fceb02 !important; }
 
 .button--yellow.button--secondary.button--icon:not(.button--disabled):not(:disabled):hover svg { fill: #fff !important; }
+
+.button--orange { background-color: #f99800 !important; color: #fff !important; border-color: #f99800 !important; border: 1px solid transparent             !important; transition: background-color .1s ease 0s  !important; }
+
+.button--orange:not(.button--disabled):not(:disabled):hover { background-color: #935a00 !important; transition: background-color .15s ease 0s  !important; color: white !important; }
+
+.button--orange:not(.button--disabled):not(:disabled):active { background-color: #472b00 !important; }
+
+.button--orange.button--secondary { border: 1px solid #f99800 !important; color: #f99800 !important; background: none              !important; }
+
+.button--orange.button--secondary:hover { transition: background-color .15s ease 0s  !important; }
+
+.button--orange.button--secondary:not(.button--disabled):not(:disabled):hover { background-color: #f99800 !important; color: #fff !important; }
+
+.button--orange.button--secondary:not(.button--disabled):not(:disabled):active { background-color: #472b00 !important; border-color: #472b00 !important; color: #fff !important; }
+
+.button--orange.button--secondary.button--icon > svg { fill: #f99800 !important; }
+
+.button--orange.button--secondary.button--icon:not(.button--disabled):not(:disabled):hover svg { fill: #fff !important; }
 
 .button--white { background-color: #fff !important; color: #ccc !important; border-color: #fff !important; border: 1px solid transparent             !important; transition: background-color .1s ease 0s  !important; }
 
