@@ -10,7 +10,6 @@ const google = require('googleapis')
 
 const SCOPES = ['https://www.googleapis.com/auth/drive.readonly']
 require('dotenv').config();
-console.log(process.env)
 
 let CLIENT_SECRETS_FILE
 
