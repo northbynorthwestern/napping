@@ -2,3 +2,34 @@
 
 .location:last-of-type { border-bottom: none !important; }
 .distance { flex-basis: 7rem; }
+<<<<<<< HEAD
+.btn--direction { }
+.masthead {
+  height: 35px;
+}
+.credit {
+  height: 50px;
+}
+
+.loader-container {
+  height: calc(100vh - 101px);
+}
+
+.loader {
+  width: 56px;
+  height: 56px;
+  border: 8px solid rgba(80, 31, 132, 0.25);
+  border-top-color: $nbn-purple;
+  border-radius: 50%;
+  position: relative;
+  animation: loader-rotate 1s linear infinite;
+  top: 50%;
+  margin: -28px auto 0; }
+
+@keyframes loader-rotate {
+  0% {
+    transform: rotate(0); }
+  100% {
+    transform: rotate(360deg); } }
+=======
+>>>>>>> e8c51214372d4e57c7e04a1e724f8e625752e267
