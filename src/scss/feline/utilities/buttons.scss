@@ -20,6 +20,7 @@
   cursor: pointer                             !important;
   padding: 0                                  !important;
   background-color: transparent               !important;
+  box-sizing: border-box                      !important;
   // Reset unusual Firefox-on-Android default style;
   // https://github.com/necolas/normalize.css/issues/214
   background-image: none                      !important;

@@ -2,8 +2,8 @@
   <div class="location xs-border-bottom xs-pb4">
     <div class="flex xs-flex-justify-between xs-flex-align-start xs-pt4">
       <div class="xs-flex-auto">
-        <h3 class="xs-mt0 xs-mb05 slab">{{this.properties.name}}</h3>
-        {{#if this.properties.subhead}}<h4 class="xs-mt05 xs-mb0">{{this.properties.subhead}}</h3>{{/if}}
+        <h3 class="xs-mt0 xs-mb05 slab bold">{{this.properties.name}}</h3>
+        {{#if this.properties.subhead}}<h4 class="xs-mt05 xs-mb0 bold">{{this.properties.subhead}}</h3>{{/if}}
       </div>
       <p class="distance xs-flex-auto xs-my0 xs-text-right bold">{{this.properties.distanceString}}</p>
     </div>
@@ -12,9 +12,9 @@
       <img src="http://placekitten.com/600/400" alt="" class="xs-full-width"/>
     </figure>
 
-    <div class="clearfix">
+    <div class="clearfix xs-my2">
       <p class="col xs-col-12 sm-col-7">{{this.properties.description}}</p>
-      <a href="{{this.directionsLink}}" class="button button--orange xs-col-12 sm-col-4 sm-offset-1 sm-my2">Take me there</a>
+      <a href="{{this.directionsLink}}" class="button button--orange col xs-col-12 sm-col-4 sm-offset-1">Take me there</a>
     </div>
 
   </div>

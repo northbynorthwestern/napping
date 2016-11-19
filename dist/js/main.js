@@ -17404,21 +17404,21 @@
 	module.exports = (Handlebars["default"] || Handlebars).template({"1":function(container,depth0,helpers,partials,data) {
 	    var stack1, alias1=container.lambda, alias2=container.escapeExpression;
 
-	  return "  <div class=\"location xs-border-bottom xs-pb4\">\n    <div class=\"flex xs-flex-justify-between xs-flex-align-start xs-pt4\">\n      <div class=\"xs-flex-auto\">\n        <h3 class=\"xs-mt0 xs-mb05 slab\">"
+	  return "  <div class=\"location xs-border-bottom xs-pb4\">\n    <div class=\"flex xs-flex-justify-between xs-flex-align-start xs-pt4\">\n      <div class=\"xs-flex-auto\">\n        <h3 class=\"xs-mt0 xs-mb05 slab bold\">"
 	    + alias2(alias1(((stack1 = (depth0 != null ? depth0.properties : depth0)) != null ? stack1.name : stack1), depth0))
 	    + "</h3>\n        "
 	    + ((stack1 = helpers["if"].call(depth0 != null ? depth0 : {},((stack1 = (depth0 != null ? depth0.properties : depth0)) != null ? stack1.subhead : stack1),{"name":"if","hash":{},"fn":container.program(2, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
 	    + "\n      </div>\n      <p class=\"distance xs-flex-auto xs-my0 xs-text-right bold\">"
 	    + alias2(alias1(((stack1 = (depth0 != null ? depth0.properties : depth0)) != null ? stack1.distanceString : stack1), depth0))
-	    + "</p>\n    </div>\n\n    <figure class=\"xs-mt2\">\n      <img src=\"http://placekitten.com/600/400\" alt=\"\" class=\"xs-full-width\"/>\n    </figure>\n\n    <div class=\"clearfix\">\n      <p class=\"col xs-col-12 sm-col-7\">"
+	    + "</p>\n    </div>\n\n    <figure class=\"xs-mt2\">\n      <img src=\"http://placekitten.com/600/400\" alt=\"\" class=\"xs-full-width\"/>\n    </figure>\n\n    <div class=\"clearfix xs-my2\">\n      <p class=\"col xs-col-12 sm-col-7\">"
 	    + alias2(alias1(((stack1 = (depth0 != null ? depth0.properties : depth0)) != null ? stack1.description : stack1), depth0))
 	    + "</p>\n      <a href=\""
 	    + alias2(alias1((depth0 != null ? depth0.directionsLink : depth0), depth0))
-	    + "\" class=\"button button--orange xs-col-12 sm-col-4 sm-offset-1 sm-my2\">Take me there</a>\n    </div>\n\n  </div>\n";
+	    + "\" class=\"button button--orange col xs-col-12 sm-col-4 sm-offset-1\">Take me there</a>\n    </div>\n\n  </div>\n";
 	},"2":function(container,depth0,helpers,partials,data) {
 	    var stack1;
 
-	  return "<h4 class=\"xs-mt05 xs-mb0\">"
+	  return "<h4 class=\"xs-mt05 xs-mb0 bold\">"
 	    + container.escapeExpression(container.lambda(((stack1 = (depth0 != null ? depth0.properties : depth0)) != null ? stack1.subhead : stack1), depth0))
 	    + "</h3>";
 	},"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {

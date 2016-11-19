@@ -44,3 +44,16 @@ $opacity-disabled: .3 !default;
 $slab: 'adelle', Georgia, serif;
 $accent: 'letter-gothic-std', Helvetica, sans-serif;
 $sans: "Source Sans Pro", Helvetica, sans-serif;
+
+$nbn-purple: #501F84;
+$purple: $nbn-purple;
+$dark-purple: #10015d;
+$light-purple: desaturate(lighten($purple, 20%), 30%);
+$lightest-purple: desaturate(lighten($purple, 60%), 40%);
+$off-white: #fafafa;
+$off-black: #2a2a2a;
+$white: #fff;
+$gray: #ccc;
+$light-gray: #fafafa;
+$orange: #f99800;
+$yellow: #fceb02;
