@@ -1,13 +1,16 @@
 @import 'feline/feline';
 
-.location:last-of-type { border-bottom: none !important; }
-.distance { flex-basis: 7rem; }
-.btn--direction { }
+.meta { flex-basis: 7rem; }
+
 .masthead {
   height: 35px;
 }
 .credit {
   height: 50px;
+}
+
+.text-xl {
+  font-size: 3.25rem !important;
 }
 
 .loader-container {

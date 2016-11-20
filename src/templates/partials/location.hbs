@@ -1,23 +1,36 @@
-<div class="clearfix">
+<div class="clearfix xs-my2">
 {{#each features}}
-  <div class="location xs-border-bottom xs-pb4">
-    <div class="flex xs-flex-justify-between xs-flex-align-start xs-pt4">
+  <div class="location {{#unless @last}}{{#unless @first}}xs-border-bottom{{/unless}}{{/unless}} {{#unless @first}}xs-pb5 xs-my5{{/unless}} xs-px1 sm-col-10 sm-offset-1 md-col-8 md-offset-2">
+    {{#if @first}}
+    <h3 class="md-col-8 md-offset-2 xs-text-center bold text-purple xs-mb4">Based on your current location and the current time of day, to optimize your nap location, you should head to:</h3>
+    {{/if}}
+
+    <div class="flex xs-flex-justify-between xs-flex-align-start">
       <div class="xs-flex-auto">
         <h2 class="xs-mt0 xs-mb05 slab bold">{{this.properties.name}}</h2>
-        {{#if this.properties.subhead}}<h4 class="xs-mt05 xs-mb0 bold">{{this.properties.subhead}}</h3>{{/if}}
+        {{#if this.properties.subhead}}<h4 class="xs-mt05 xs-mb0 bold text-purple">{{this.properties.subhead}}</h3>{{/if}}
       </div>
-      <p class="distance xs-flex-auto xs-my0 xs-text-right bold">{{this.properties.distanceString}}</p>
+      <div class="meta xs-flex-auto xs-text-right flex xs-flex-column">
+        {{#if this.properties.distanceString}}<p class="bold xs-my0">{{this.properties.distanceString}}</p>{{/if}}
+      </div>
     </div>
 
     <figure class="xs-mt2">
-      <img src="http://placekitten.com/600/400" alt="" class="xs-full-width"/>
+      <img src="{{this.properties.url}}" alt="" class="xs-full-width"/>
+      <figcaption class="xs-text-right xs-text-6">{{this.properties.credit}} / North by Northwestern</figcaption>
     </figure>
 
-    <div class="clearfix xs-my2">
-      <p class="col xs-col-12 sm-col-7">{{this.properties.description}}</p>
-      <a href="{{this.directionsLink}}" class="button button--orange col xs-col-12 sm-col-4 sm-offset-1 bold">Take me there</a>
+    {{#if this.properties.rankingString}}<p class="text-purple xs-mt1 xs-text-3">{{this.properties.rankingString}}</p>{{/if}}
+    <div class="clearfix xs-mt2">
+      <div class="col xs-col-12 sm-col-7">
+        <p>{{this.properties.description}}</p>
+      </div>
+      <a href="{{this.properties.directionsLink}}" class="button button--orange col xs-col-12 sm-col-4 sm-offset-1 bold">Take me there</a>
     </div>
 
+    {{#if @first}}
+    <h3 class="md-col-8 md-offset-2 xs-text-center bold text-purple xs-mt5">If that's not your style, check out all these other great nap spots on campus:</h3>
+    {{/if}}
   </div>
 {{/each}}
 </div>

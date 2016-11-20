@@ -1,182 +1,213 @@
 {
   "naps": [
     {
+      "url": "http://media.northbynorthwestern.com.s3.amazonaws.com/uploads/2016/11/19/Deering_Meadow.jpg",
       "name": "Deering Meadow",
-      "credit": "Michelle ",
+      "credit": "Michelle Yun",
       "Photos in?": "YES",
       "optimalTime": "Afternoon",
+      "rankingString": "★★★★★",
       "ranking": 5,
       "latitude": 42.053192,
       "longitude": -87.676515,
       "description": "It's in the high sixties outside, and you just exited your last class of day. Next stop: Deering meadow. Lay down on the grass under the trees and take a quick mid day snooze. "
     },
     {
+      "url": "http://media.northbynorthwestern.com.s3.amazonaws.com/uploads/2016/11/19/Lakefill.jpg",
       "name": "Lakefill ",
-      "credit": "Mia ",
+      "credit": "Mia Zanzucchi",
       "Photos in?": "YES",
       "optimalTime": "Early evening ",
+      "rankingString": "★★★★★",
       "ranking": 5,
       "latitude": 42.055289,
-      "longitude": -87.670851
+      "longitude": -87.670851,
+      "description": "Hang a hammock, bring a blanket or just pass out on the grass: the Lakefill is the best place for a nap on a nice day. Sure, there are always people out and about, but they're generally not loud. "
     },
     {
+      "url": "http://media.northbynorthwestern.com.s3.amazonaws.com/uploads/2016/11/19/Norris_egg_chairs_and_bean_bags.jpg",
       "name": "Norris",
       "subhead": "Egg Chairs and/or Beanbags",
-      "credit": "MIA ",
+      "credit": "Mia Zanzucchi",
       "Photos in?": "YES",
       "optimalTime": "Morning ",
+      "rankingString": "★★★★",
       "ranking": 4,
       "latitude": 42.053536,
       "longitude": -87.672655,
-      "description": "Ah, beautiful non-traditional seating in Norris! Beat the rush and take your nap here during the earlier hours of the day. Warning: likely still pretty noisy"
+      "description": "Ah, beautiful non-traditional seating in Norris! Beat the rush and take your nap here during the earlier hours of the day. Warning: likely still pretty noisy."
     },
     {
+      "url": "http://media.northbynorthwestern.com.s3.amazonaws.com/uploads/2016/11/19/LIBRARY.jpg",
       "name": "The Library",
-      "credit": "Justin",
+      "credit": "Justin Curto",
       "Photos in?": "YES",
       "optimalTime": "Night",
+      "rankingString": "★★★★",
       "ranking": 4,
       "latitude": 42.05316,
       "longitude": -87.674245,
       "description": "It happens to the best of us – you tell yourself you'll close your eyes for a few minutes, and you wake up sprawled out on a couch an hour later."
     },
     {
-      "name": "Tech Auditorium Balcony",
-      "credit": "Selah",
+      "url": "http://media.northbynorthwestern.com.s3.amazonaws.com/uploads/2016/11/19/Sleeping_in_Tech.jpg",
+      "name": "Tech",
+      "subhead": "Back of a lecture room",
+      "credit": "Selah Holland",
       "Photos in?": "YES",
       "optimalTime": "Morning",
+      "rankingString": "★★★",
       "ranking": 3,
       "latitude": 42.05778,
       "longitude": -87.675958,
       "description": "What's better than learning chemistry in LR2? Sleeping through it."
     },
     {
+      "url": "http://media.northbynorthwestern.com.s3.amazonaws.com/uploads/2016/11/19/McTrib_third_floor.jpg",
       "name": "McTrib ",
-      "subhead": "3rd Floor Recliners",
-      "credit": "David ",
+      "subhead": "3rd Floor Couches",
+      "credit": "David Gleisner",
       "Photos in?": "YES",
+      "optimalTime": "Evening",
+      "rankingString": "★★★★",
+      "ranking": 4,
       "latitude": 42.051369,
       "longitude": -87.674163,
-      "description": "with those giant ass recliners"
+      "description": "Find some luxury in an unexpected place. The third flood of the McCornick Foundation Center is offices and integrated marketing classrooms, and it's generally quiet, especially in the evening. "
     },
     {
+      "url": "http://media.northbynorthwestern.com.s3.amazonaws.com/uploads/2016/11/19/Norris_second_floor.jpg",
       "name": "Norris",
       "subhead": "Second Floor Couches",
-      "credit": "MIA ",
+      "credit": "Mia Zanzucchi",
       "Photos in?": "YES",
       "optimalTime": "Afternoon",
-      "ranking": 1,
+      "rankingString": "★★",
+      "ranking": 2,
       "latitude": 42.053889,
       "longitude": -87.672628,
-      "description": "Not the most comfy place for a snooze, but the second floor of Norris is generally pretty quiet until the evening, when clubs and events take over the rooms. "
+      "description": "Not the most comfy place for a snooze, but the second floor of Norris is generally pretty quiet until the evening, when clubs and events take over."
     },
     {
+      "url": "http://media.northbynorthwestern.com.s3.amazonaws.com/uploads/2016/11/19/Rock.jpg",
       "name": "The Rock",
-      "credit": "Alex",
+      "credit": "Alex Schwartz",
       "Photos in?": "YEE",
       "optimalTime": "Day",
+      "rankingString": "★★",
       "ranking": 2,
       "latitude": 42.051548,
       "longitude": -87.675896,
       "description": "Someone's probably guarding it anyways--you can just blend in. But bring multiple parkas—it gets cold out there."
     },
     {
-      "name": "The Intercampus ",
-      "credit": "David "
-    },
-    {
-      "name": "At a Northwestern game??? Help ",
-      "credit": "Mia"
-    },
-    {
+      "url": "http://media.northbynorthwestern.com.s3.amazonaws.com/uploads/2016/11/19/Dorm_lounge.jpg",
       "name": "Your Dorm Lounge",
-      "credit": "David ",
+      "credit": "David Gleisner",
       "Photos in?": "YES",
       "optimalTime": "Early afternoon ",
-      "ranking": 2.5,
-      "description": "The dorm lounges of Northwestern residential halls, communities and colleges are places of gathering, where students come together to enjoy each other's company. With the right timing, however, they can also be places of napping."
+      "rankingString": "★★★",
+      "ranking": 3,
+      "description": "The lounges of Northwestern dorms are places of gathering where students come together to enjoy each other's company. With the right timing, however, they can also be places of napping. Best not to look between the cushions, though. Ignorance can be bliss. "
     },
     {
+      "url": "http://media.northbynorthwestern.com.s3.amazonaws.com/uploads/2016/11/19/Annenberg_lounge.jpg",
       "name": "Annenberg Hall Lounge ",
-      "credit": "Michelle",
+      "credit": "Michelle Yun",
       "Photos in?": "YES",
       "optimalTime": "Afternoon ",
+      "rankingString": "★★★★",
       "ranking": 4,
       "latitude": 42.056066,
       "longitude": -87.674505,
       "description": "In the home of the SESP, you'll probably wake up from your sweet dreams with a cookies and milk and a blanket. "
     },
     {
+      "url": "http://media.northbynorthwestern.com.s3.amazonaws.com/uploads/2016/11/19/SPAC_lobby.jpg",
       "name": "SPAC Lobby",
-      "credit": "Mia ",
+      "credit": "Mia Zanzucchi",
       "Photos in?": "YES",
       "optimalTime": "Night ",
+      "rankingString": "★★",
       "ranking": 2,
       "latitude": 42.059366,
       "longitude": -87.672733,
       "description": "You've just worked out. You deserve a nap. Or maybe you haven't worked out yet, but you've already walked all the way up north, so treat yourself. Might be a little noisy with the sound of swole #bros lifting.  Good in a pinch. "
     },
     {
-      "name": "Shepard Hall",
+      "url": "http://media.northbynorthwestern.com.s3.amazonaws.com/uploads/2016/11/19/Shepard_Engagement_Center.jpg",
+      "name": "Shepard Hall Engagement Center",
       "subhead": "Egg Chairs",
-      "credit": "Alex S",
+      "credit": "Alex Schwartz",
       "Photos in?": "YES",
       "optimalTime": "Afternoon",
+      "rankingString": "★★★★",
       "ranking": 4,
       "latitude": 42.050822,
       "longitude": -87.678971,
       "description": "Feel like a baby chicken all snuggled up in an egg. Blocks out some sound and you can swing a little bit. But beware if you have motion sickness!"
     },
     {
+      "url": "http://media.northbynorthwestern.com.s3.amazonaws.com/uploads/2016/11/19/The_Garage.jpg",
       "name": "The Garage ",
-      "credit": "David ",
+      "credit": "David Gleisner",
       "Photos in?": "YES",
       "optimalTime": "Morning",
+      "rankingString": "★★★",
       "ranking": 3,
       "latitude": 42.059784,
       "longitude": -87.672969,
-      "description": "Entrance may require some sneakiness, as this napping area is technically only open to Garage residents. (shhhh)  Nonetheless, the beanbags in combination with the enclosed space lead to an excellent napping experience."
+      "description": "Entrance may require some sneakiness, as this napping area is technically only open to Garage residents (shhhh).  Nonetheless, the beanbags in combination with the enclosed space lead to an excellent napping experience."
     },
     {
+      "url": "http://media.northbynorthwestern.com.s3.amazonaws.com/uploads/2016/11/19/L_train.jpg",
       "name": "The Davis L Stop",
-      "credit": "Paola",
+      "credit": "Paola de Varona",
       "Photos in?": "YES",
       "optimalTime": "Night ",
+      "rankingString": "★★★★",
       "ranking": 4,
       "latitude": 42.047859,
       "longitude": -87.683483,
       "description": "Coming home from a late night out in downtown? You can sneak in the perfect 1 hour nap ride back to Evanston on the L. But beware of missing your stop and slight motion sickness! "
     },
     {
+      "url": "http://media.northbynorthwestern.com.s3.amazonaws.com/uploads/2016/11/19/Ragenstein.jpg",
       "name": "Ragenstein Hall",
-      "credit": "Paola ",
+      "credit": "Paola de Varona",
       "Photos in?": "YES! ",
       "optimalTime": "Early afternoon",
+      "rankingString": "★★★",
       "ranking": 3,
       "latitude": 42.052189,
       "longitude": -87.671427,
-      "description": "These comfortable couches are a well kept secret and the view of the lake is unbeatable. But unless you're a Bienen student you'll have to stake out at the entrance until you can wiggle your way in behind them. Plus if the sound of a ton of instruments playing at once isn't your favorite lullaby, you may have a hard time getting some shut eye. "
+      "description": "These comfortable couches are a well kept secret and the view of the lake is unbeatable. But unless you're a Bienen student, you'll have to stake out at the entrance until you can wiggle your way in behind them. But if the sound of several different instruments playing different songs at once isn't your favorite lullaby, you may have a hard time getting some shut eye. "
     },
     {
+      "url": "http://media.northbynorthwestern.com.s3.amazonaws.com/uploads/2016/11/19/Francis_Searle.jpg",
       "name": "Francis Searle ",
       "subhead": "First Floor Couches",
-      "credit": "MIA ",
+      "credit": "Mia Zanzucchi",
       "Photos in?": "YES",
       "optimalTime": "Afternoon ",
+      "rankingString": "★★★★",
       "ranking": 4,
       "latitude": 42.058505,
       "longitude": -87.673607,
       "description": "This secret crevice on the fist floor of Francis Searle boasts surprisingly cushy couches and is generally quiet except during class change. It's a great little spot for a cat nap if you're too far from home. "
     },
     {
-      "name": "Tech earth and plannetary sciences room thingy lounge whatever",
-      "credit": "David ",
+      "url": "http://media.northbynorthwestern.com.s3.amazonaws.com/uploads/2016/11/19/Tech_earth_sciences.jpg",
+      "name": "Tech",
+      "subhead": "Earth and planetary sciences lounge",
+      "credit": "David Gleisner",
       "Photos in?": "YES",
       "optimalTime": "Early morning ",
+      "rankingString": "★★★★★",
       "ranking": 5,
       "latitude": 42.05753,
       "longitude": -87.67596,
-      "description": "Surrounded by lush vegetation, fascinating geologic features from around the world and a beautifully designed atrium, the lounge area on the third floor of the earth and planetary sciences department in tech does not disappoint.  The couch, created by pushing four armless lounge chairs together, provides abundant comfort and ample space for those seeking a short rest or a long slumber, from napping amateurs to sleepytime veterans.\n"
+      "description": "Surrounded by lush vegetation, fascinating geologic features from around the world and a beautifully designed atrium, the lounge area on the third floor of the earth and planetary sciences department in Tech does not disappoint.  The couch, created by pushing four armless lounge chairs together, provides abundant comfort and ample space for those seeking a short rest or a long slumber, from napping amateurs to sleepytime veterans.\n"
     }
   ]
 }

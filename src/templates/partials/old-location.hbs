@@ -1,0 +1,47 @@
+
+
+{{#each features}}
+<div class="clearfix xs-my5">
+{{#if @first}}
+  <div class="location">
+    <h3 class="md-col-8 md-offset-2 xs-text-center text-thin text-purple">Based on your current location and the current time of day, to optimize your nap location, you should head to:</h3>
+    <div class="clearfix xs-mt4">
+      <div class="gutters flex">
+        <figure class="col xs-col-12 sm-col-6">
+          <img src="http://placekitten.com/600/400" alt="" class="xs-full-width"/>
+        </figure>
+        <div class="col xs-col-12 sm-col-6 flex xs-flex-column">
+          <h1 class="slab bold xs-mt0">{{this.properties.name}}</h1>
+          {{#if this.properties.subhead}}<h2 class="xs-mt1 bold">{{this.properties.subhead}}</h2>{{/if}}
+          <p class="xs-my2">{{this.properties.description}}</p>
+          <a href="{{this.directionsLink}}" class="button button--orange bold xs-full-width">Take me there</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <h3 class="md-col-8 md-offset-2 xs-text-center text-thin text-purple xs-mt5">If that's not your style, check out all these other great nap spots on campus:</h3>
+{{else}}
+  <div class="location {{#unless @last}}xs-border-bottom{{/unless}} xs-pb6 xs-px1 sm-col-10 sm-offset-1 md-col-8 md-offset-2">
+    <div class="flex xs-flex-justify-between xs-flex-align-start xs-pt2">
+      <div class="xs-flex-auto">
+        <h2 class="xs-mt0 xs-mb05 slab bold">{{this.properties.name}}</h2>
+        {{#if this.properties.subhead}}<h4 class="xs-mt05 xs-mb0 bold">{{this.properties.subhead}}</h3>{{/if}}
+      </div>
+      <div class="meta xs-flex-auto xs-text-right">
+        <p class="bold">{{this.properties.distanceString}}</p>
+      </div>
+    </div>
+
+    <figure class="xs-mt2">
+      <img src="http://placekitten.com/600/400" alt="" class="xs-full-width"/>
+    </figure>
+
+    <div class="clearfix xs-mt2">
+      <p class="col xs-col-12 sm-col-7">{{this.properties.description}}</p>
+      <a href="{{this.directionsLink}}" class="button button--orange col xs-col-12 sm-col-4 sm-offset-1 xs-mt2 bold">Take me there</a>
+    </div>
+  </div>
+{{/if}}
+</div>
+{{/each}}
+</div>

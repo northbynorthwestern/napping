@@ -64,13 +64,6 @@
   &flex-self-baseline { align-self: baseline !important; }
   &flex-self-stretch  { align-self: stretch !important; }
 
-  /* Automatically size based on the flex item’s content */
-  &flex-basis-content { flex-basis: content !important; }
-  &flex-basis-fill { flex-basis: fill !important; }
-  &flex-basis-max { flex-basis: max-content !important; }
-  &flex-basis-min { flex-basis: min-content !important; }
-  &flex-basis-fit { flex-basis: fit-content !important; }
-
   // flex basis
   &flex-order-1 { order: 1                               !important; }
   &flex-order-2 { order: 2                               !important; }

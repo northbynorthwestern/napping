@@ -1,12 +1,17 @@
 const _ = require('lodash');
 const copyFile = require("json-loader!./../data/copy");
 const locationTemplate = require("./../templates/partials/location.hbs");
+const googleApiKey = "AIzaSyCCuYYtuG5ZxKT893FxyVLGWQk79egrbi0"
 
 var nbnGeoTools = new NBNGeoTools();
 var napLocationData = {};
 var currentLocation = { "geometry": {"type": "point", "coordinates": [0,0]}, }
 
 var locationsDOM = document.querySelector('#locations')
+var titleDOM = document.querySelector('#title')
+var startButton = document.querySelector('button#start')
+
+startButton.addEventListener('click', start)
 
 function start() {
   napLocationData = copyToGeoJson(copyFile.naps);
@@ -30,14 +35,36 @@ function copyToGeoJson(arr) {
 function getLocation() {
   console.log("getting location...")
   if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(orderPointsFromCurrentPosition);
+    titleDOM.innerHTML = "<div class='loader'></div>"
+    navigator.geolocation.getCurrentPosition(
+      function(position) { orderPointsFromCurrentPosition(position.coords.longitude, position.coords.latitude)},
+      function(failure) {
+        if(failure.message.indexOf("Only secure origins are allowed") == 0) {
+          getLocationWithGoogleApi();
+        }
+      }
+    );
   } else {
-    x.innerHTML = "Geolocation is not supported by this browser.";
+    titleDOM.innerHTML = "Geolocation is not supported by this browser.";
   }
 }
 
-function orderPointsFromCurrentPosition(position) {
-  currentLocation.geometry.coordinates = [position.coords.longitude, position.coords.latitude]
+function getLocationWithGoogleApi() {
+  console.log("getting stuff");
+  url = "https://www.googleapis.com/geolocation/v1/geolocate?key=" + googleApiKey;
+  request = new XMLHttpRequest();
+  request.open('POST', url, true);
+  request.onload = function() {
+    if (request.status >= 200 && request.status < 400) {
+      var d = JSON.parse(request.responseText);
+      orderPointsFromCurrentPosition(d.location.lng, d.location.lat);
+  	}
+  };
+  request.send();
+}
+
+function orderPointsFromCurrentPosition(longitude, latitude) {
+  currentLocation.geometry.coordinates = [longitude, latitude]
   napLocationData.features = nbnGeoTools.orderByDistanceFromPoint(currentLocation, napLocationData.features);
   updateDOM(napLocationData);
 }
@@ -55,7 +82,8 @@ function processFeatureProperty(feature) {
 }
 
 function makeDistanceString(dist) {
-   if (dist > 0.5) {
+  if (!dist) { return false; }
+  if (dist > 0.5) {
     return dist.toFixed(2) + " mi";
   } else {
     return Math.round(dist * 5280.0) + " ft";
@@ -63,7 +91,7 @@ function makeDistanceString(dist) {
 }
 
 function makeMapLink(coords) {
-  appleLink = "http://maps.apple.com/?dirflg=w?daddr=" + coords[0] + "," + coords[1]
+  appleLink = "http://maps.apple.com/?dirflg=w?q=" + coords[0] + "," + coords[1]
   return appleLink
 }
 
@@ -111,4 +139,4 @@ function NBNGeoTools() {
   }
 }
 
-start();
+// start();
