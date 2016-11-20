@@ -10,7 +10,7 @@
       "ranking": 5,
       "latitude": 42.053192,
       "longitude": -87.676515,
-      "description": "It's in the high sixties outside, and you just exited your last class of day. Next stop: Deering meadow. Lay down on the grass under the trees and take a quick mid day snooze. "
+      "description": "It's in the high sixties outside, and you just exited your last class of day. Next stop: Deering Meadow. Lay down on the grass under the trees and take a quick midday snooze. "
     },
     {
       "url": "http://media.northbynorthwestern.com.s3.amazonaws.com/uploads/2016/11/19/Lakefill.jpg",
@@ -35,7 +35,7 @@
       "ranking": 4,
       "latitude": 42.053536,
       "longitude": -87.672655,
-      "description": "Ah, beautiful non-traditional seating in Norris! Beat the rush and take your nap here during the earlier hours of the day. Warning: likely still pretty noisy."
+      "description": "Ah, beautiful non-traditional seating in Norris! Beat the rush and take your nap here during the earlier hours of the day. Warning: no matter what time you go, you'll probably still experience the sounds and smells of Canada Goose-wearing students ordering their daily Peppermint Mochas from Norbucks. "
     },
     {
       "url": "http://media.northbynorthwestern.com.s3.amazonaws.com/uploads/2016/11/19/LIBRARY.jpg",
@@ -47,12 +47,12 @@
       "ranking": 4,
       "latitude": 42.05316,
       "longitude": -87.674245,
-      "description": "It happens to the best of us – you tell yourself you'll close your eyes for a few minutes, and you wake up sprawled out on a couch an hour later."
+      "description": "It happens to the best of us–you tell yourself you'll close your eyes for a few minutes, and you wake up sprawled out on a couch an hour later."
     },
     {
       "url": "http://media.northbynorthwestern.com.s3.amazonaws.com/uploads/2016/11/19/Sleeping_in_Tech.jpg",
       "name": "Tech",
-      "subhead": "Back of a lecture room",
+      "subhead": "Back of a Lecture Room",
       "credit": "Selah Holland",
       "Photos in?": "YES",
       "optimalTime": "Morning",
@@ -64,8 +64,8 @@
     },
     {
       "url": "http://media.northbynorthwestern.com.s3.amazonaws.com/uploads/2016/11/19/McTrib_third_floor.jpg",
-      "name": "McTrib ",
-      "subhead": "3rd Floor Couches",
+      "name": "McCormick Foundation Center",
+      "subhead": "Third Floor Couches",
       "credit": "David Gleisner",
       "Photos in?": "YES",
       "optimalTime": "Evening",
@@ -98,7 +98,7 @@
       "ranking": 2,
       "latitude": 42.051548,
       "longitude": -87.675896,
-      "description": "Someone's probably guarding it anyways--you can just blend in. But bring multiple parkas—it gets cold out there."
+      "description": "Someone's probably guarding it anyways–you can just blend in. But bring multiple parkas (it gets cold out here)."
     },
     {
       "url": "http://media.northbynorthwestern.com.s3.amazonaws.com/uploads/2016/11/19/Dorm_lounge.jpg",
@@ -112,7 +112,8 @@
     },
     {
       "url": "http://media.northbynorthwestern.com.s3.amazonaws.com/uploads/2016/11/19/Annenberg_lounge.jpg",
-      "name": "Annenberg Hall Lounge ",
+      "name": "Annenberg Hall",
+      "subhead": "Lounge",
       "credit": "Michelle Yun",
       "Photos in?": "YES",
       "optimalTime": "Afternoon ",
@@ -124,11 +125,12 @@
     },
     {
       "url": "http://media.northbynorthwestern.com.s3.amazonaws.com/uploads/2016/11/19/SPAC_lobby.jpg",
-      "name": "SPAC Lobby",
+      "name": "SPAC",
+      "subhead": "Lobby",
       "credit": "Mia Zanzucchi",
       "Photos in?": "YES",
       "optimalTime": "Night ",
-      "rankingString": "★★",
+      "rankingString": "★",
       "ranking": 2,
       "latitude": 42.059366,
       "longitude": -87.672733,
@@ -136,8 +138,8 @@
     },
     {
       "url": "http://media.northbynorthwestern.com.s3.amazonaws.com/uploads/2016/11/19/Shepard_Engagement_Center.jpg",
-      "name": "Shepard Hall Engagement Center",
-      "subhead": "Egg Chairs",
+      "name": "Shepard Hall",
+      "subhead": "Engagement Center Egg Chairs",
       "credit": "Alex Schwartz",
       "Photos in?": "YES",
       "optimalTime": "Afternoon",
@@ -145,11 +147,12 @@
       "ranking": 4,
       "latitude": 42.050822,
       "longitude": -87.678971,
-      "description": "Feel like a baby chicken all snuggled up in an egg. Blocks out some sound and you can swing a little bit. But beware if you have motion sickness!"
+      "description": "Feel like a baby chicken all snuggled up in an egg. The egg chairs in the Shepard Engagement Center blocks out some sound and you can swing a little bit. But beware if you are prone to motion sickness!"
     },
     {
       "url": "http://media.northbynorthwestern.com.s3.amazonaws.com/uploads/2016/11/19/The_Garage.jpg",
-      "name": "The Garage ",
+      "name": "SPAC",
+      "subhead": "The Garage ",
       "credit": "David Gleisner",
       "Photos in?": "YES",
       "optimalTime": "Morning",
@@ -161,7 +164,7 @@
     },
     {
       "url": "http://media.northbynorthwestern.com.s3.amazonaws.com/uploads/2016/11/19/L_train.jpg",
-      "name": "The Davis L Stop",
+      "name": "The Davis 'L' Stop",
       "credit": "Paola de Varona",
       "Photos in?": "YES",
       "optimalTime": "Night ",
@@ -169,11 +172,11 @@
       "ranking": 4,
       "latitude": 42.047859,
       "longitude": -87.683483,
-      "description": "Coming home from a late night out in downtown? You can sneak in the perfect 1 hour nap ride back to Evanston on the L. But beware of missing your stop and slight motion sickness! "
+      "description": "Coming home from a late night out in downtown? You can sneak in the perfect one hour nap back to Evanston on the 'L'. But beware of missing your stop and slight motion sickness! "
     },
     {
       "url": "http://media.northbynorthwestern.com.s3.amazonaws.com/uploads/2016/11/19/Ragenstein.jpg",
-      "name": "Ragenstein Hall",
+      "name": "Regenstein Hall",
       "credit": "Paola de Varona",
       "Photos in?": "YES! ",
       "optimalTime": "Early afternoon",
@@ -181,7 +184,7 @@
       "ranking": 3,
       "latitude": 42.052189,
       "longitude": -87.671427,
-      "description": "These comfortable couches are a well kept secret and the view of the lake is unbeatable. But unless you're a Bienen student, you'll have to stake out at the entrance until you can wiggle your way in behind them. But if the sound of several different instruments playing different songs at once isn't your favorite lullaby, you may have a hard time getting some shut eye. "
+      "description": "These comfortable couches are a well-kept secret, and the view of the lake is unbeatable. But unless you're a Bienen student, you'll have to stake out at the entrance until you can wiggle your way in behind one of them. Also, if the sound of several different instruments playing different songs at once isn't your favorite lullaby, you may have a hard time getting some shut eye. "
     },
     {
       "url": "http://media.northbynorthwestern.com.s3.amazonaws.com/uploads/2016/11/19/Francis_Searle.jpg",
@@ -194,12 +197,12 @@
       "ranking": 4,
       "latitude": 42.058505,
       "longitude": -87.673607,
-      "description": "This secret crevice on the fist floor of Francis Searle boasts surprisingly cushy couches and is generally quiet except during class change. It's a great little spot for a cat nap if you're too far from home. "
+      "description": "This secret crevice on the first floor of Francis Searle boasts surprisingly cushy couches and is generally quiet except during class change. It's a great little spot for a cat nap if you're too far from home. "
     },
     {
       "url": "http://media.northbynorthwestern.com.s3.amazonaws.com/uploads/2016/11/19/Tech_earth_sciences.jpg",
       "name": "Tech",
-      "subhead": "Earth and planetary sciences lounge",
+      "subhead": "Earth and Planetary Sciences Lounge",
       "credit": "David Gleisner",
       "Photos in?": "YES",
       "optimalTime": "Early morning ",

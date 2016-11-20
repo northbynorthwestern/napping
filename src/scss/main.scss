@@ -14,7 +14,7 @@
 }
 
 .loader-container {
-  height: calc(100vh - 101px);
+  height: calc(100vh - 85px);
 }
 
 .loader {
@@ -33,3 +33,14 @@
     transform: rotate(0); }
   100% {
     transform: rotate(360deg); } }
+
+
+.fade-out {
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+.fade-in {
+  opacity: 1;
+  transition: opacity 1s;
+}

@@ -7,7 +7,8 @@ var nbnGeoTools = new NBNGeoTools();
 var napLocationData = {};
 var currentLocation = { "geometry": {"type": "point", "coordinates": [0,0]}, }
 
-var locationsDOM = document.querySelector('#locations')
+var locationsDOM = document.querySelector('#locations');
+var canvasContainerDOM = document.querySelector('.canvas-container')
 var titleDOM = document.querySelector('#title')
 var startButton = document.querySelector('button#start')
 
@@ -33,9 +34,10 @@ function copyToGeoJson(arr) {
 }
 
 function getLocation() {
-  console.log("getting location...")
+  titleDOM.classList.add('fade-out');
+  emojiRain.addDrops(200);
+
   if (navigator.geolocation) {
-    titleDOM.innerHTML = "<div class='loader'></div>"
     navigator.geolocation.getCurrentPosition(
       function(position) { orderPointsFromCurrentPosition(position.coords.longitude, position.coords.latitude)},
       function(failure) {
@@ -70,8 +72,11 @@ function orderPointsFromCurrentPosition(longitude, latitude) {
 }
 
 function updateDOM(data) {
-  data.features = _.map(data.features, processFeatureProperty)
-  locationsDOM.innerHTML = locationTemplate(data);
+  data.features = _.map(data.features, processFeatureProperty);
+  setTimeout(function() {
+    emojiRain.stop();
+    locationsDOM.innerHTML = locationTemplate(data);
+  }, 1000);
 }
 
 function processFeatureProperty(feature) {
@@ -139,4 +144,169 @@ function NBNGeoTools() {
   }
 }
 
-// start();
+
+function EmojiRain(parentElement) {
+  this.dropsForDrawing = [];
+
+  this.drops = 100;
+  this.active = false;
+  this.emoji = ['1F62A', '1F634', '1F62B', '1F629', '1F6CF', '1F6CC', '1F4A4', '1F4A4'];
+  this.totalEmoji = this.emoji.length;
+  this.imageTransmogrifier = document.createElement('div');
+  this.useTwemoji = false;
+
+  this.canvas = document.createElement('canvas');
+
+  this.context = this.canvas.getContext('2d');
+  this.context.fillStyle = 'black';
+  this.parentElement = parentElement;
+}
+
+
+EmojiRain.prototype = {
+  init: function() {
+    this.resizeWindow();
+    this.scaleCanvas();
+
+    var self = this;
+    window.addEventListener('resize', function() {
+      self.resizeWindow();
+    }, false);
+
+    if (!this.useTwemoji) {
+      this.generateDrops();
+    }
+
+    this.parentElement.appendChild(this.canvas);
+  },
+
+  start: function() {
+    this.resizeWindow();
+    this.scaleCanvas();
+    this.active = true;
+    this.animate();
+  },
+
+  stop: function() {
+    this.active = false;
+    clearTimeout(this.timeout);
+    window.cancelAnimationFrame(this.animationFrame);
+    this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
+  },
+
+
+  giveMeARandomEmoji: function() {
+    var emoji = {};
+    emoji.code = this.emoji[Math.floor((Math.random() * this.totalEmoji))];
+    emoji.char = this.fromCodePoint(emoji.code);
+    // 1 to window size
+    emoji.x = Math.floor((Math.random() * this.canvas.width) + 1);
+    emoji.y = Math.floor((Math.random() * this.canvas.height) + 1);
+    if (this.useTwemoji && this.importedTwemoji) {
+      this.imageTransmogrifier.innerHTML = twemoji.parse(emoji.char);
+      emoji.img = this.imageTransmogrifier.childNodes[0];
+    }
+    // I am pulling these numbers out of a hat.
+    emoji.speed = Math.floor(Math.random() * 2 + 1);
+    emoji.opacity = 1;
+    emoji.opacitySpeed = 0.005 * (Math.random() * 2 + 1);
+    return emoji;
+  },
+
+  generateDrops: function(number) {
+    this.dropsForDrawing = [];
+    for (var i = 0; i < this.drops; i++) {
+      var emoji = this.giveMeARandomEmoji();
+      emoji.arrayIndex = i;
+      this.dropsForDrawing.push(emoji);
+    }
+  },
+
+  addDrops: function(number) {
+    startLength = this.dropsForDrawing.length
+    for (var i = 0; i < number; i++) {
+      var emoji = this.giveMeARandomEmoji();
+      emoji.arrayIndex = startLength + i;
+      this.dropsForDrawing.push(emoji);
+    }
+  },
+
+  animate: function() {
+    var self = this;
+    var boundAnimate = _.bind(self.animate, self);
+    self.animationFrame = window.requestAnimationFrame(boundAnimate);
+    self.context.clearRect(0, 0, self.canvas.width, self.canvas.height);
+    for (var i = 0; i < self.dropsForDrawing.length; i++) {
+      self.paintEmoji(self.dropsForDrawing[i]);
+    }
+  },
+
+  paintEmoji: function(emoji) {
+    if (emoji.y >= this.canvas.height || emoji.opacity < 0.1) {
+      var i = emoji.arrayIndex;
+      emoji = this.giveMeARandomEmoji();
+      emoji.arrayIndex = i;
+      this.dropsForDrawing[i] = emoji;
+    }
+    else {
+      emoji.y += emoji.speed;
+      emoji.opacity -= emoji.opacitySpeed;
+    }
+    this.context.globalAlpha = emoji.opacity;
+    var isEven = emoji.arrayIndex % 2;
+    if (this.useTwemoji && emoji.img && emoji.img != '') {
+      var size = isEven ? 20 : 30;
+      this.context.drawImage(emoji.img, emoji.x, emoji.y, size, size);
+    } else {
+      this.context.font = isEven ? '20px serif' : '30px serif';
+      this.context.fillText(emoji.char, emoji.x, emoji.y);
+    }
+    this.context.restore();
+  },
+
+  resizeWindow: function() {
+    this.canvas.width = window.innerWidth;
+    this.canvas.height = window.innerHeight;
+  },
+
+  scaleCanvas: function() {
+    // Finally query the various pixel ratios.
+    var devicePixelRatio = window.devicePixelRatio || 1;
+    var backingStoreRatio = this.context.webkitBackingStorePixelRatio ||
+                        this.context.mozBackingStorePixelRatio ||
+                        this.context.msBackingStorePixelRatio ||
+                        this.context.oBackingStorePixelRatio ||
+                        this.context.backingStorePixelRatio || 1;
+    var ratio = devicePixelRatio / backingStoreRatio;
+    // Upscale the canvas if the two ratios don't match.
+    if (devicePixelRatio !== backingStoreRatio) {
+        var oldWidth = this.canvas.width;
+        var oldHeight = this.canvas.height;
+        this.canvas.width = oldWidth * ratio;
+        this.canvas.height = oldHeight * ratio;
+        this.canvas.style.width = oldWidth + 'px';
+        this.canvas.style.height = oldHeight + 'px';
+        // Now scale the context to counter the fact that we've manually scaled
+        // our canvas element.
+        this.context.scale(ratio, ratio);
+    }
+  },
+
+  fromCodePoint: function(codepoint) {
+    var code = typeof codepoint === 'string' ?
+          parseInt(codepoint, 16) : codepoint;
+    if (code < 0x10000) {
+      return String.fromCharCode(code);
+    }
+    code -= 0x10000;
+    return String.fromCharCode(
+      0xD800 + (code >> 10),
+      0xDC00 + (code & 0x3FF)
+    );
+  }
+};
+
+var emojiRain = new EmojiRain(canvasContainerDOM);
+emojiRain.init();
+emojiRain.start();
+

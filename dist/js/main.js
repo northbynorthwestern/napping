@@ -60,7 +60,8 @@
 	var napLocationData = {};
 	var currentLocation = { "geometry": {"type": "point", "coordinates": [0,0]}, }
 
-	var locationsDOM = document.querySelector('#locations')
+	var locationsDOM = document.querySelector('#locations');
+	var canvasContainerDOM = document.querySelector('.canvas-container')
 	var titleDOM = document.querySelector('#title')
 	var startButton = document.querySelector('button#start')
 
@@ -86,9 +87,10 @@
 	}
 
 	function getLocation() {
-	  console.log("getting location...")
+	  titleDOM.classList.add('fade-out');
+	  emojiRain.addDrops(200);
+
 	  if (navigator.geolocation) {
-	    titleDOM.innerHTML = "<div class='loader'></div>"
 	    navigator.geolocation.getCurrentPosition(
 	      function(position) { orderPointsFromCurrentPosition(position.coords.longitude, position.coords.latitude)},
 	      function(failure) {
@@ -123,8 +125,11 @@
 	}
 
 	function updateDOM(data) {
-	  data.features = _.map(data.features, processFeatureProperty)
-	  locationsDOM.innerHTML = locationTemplate(data);
+	  data.features = _.map(data.features, processFeatureProperty);
+	  setTimeout(function() {
+	    emojiRain.stop();
+	    locationsDOM.innerHTML = locationTemplate(data);
+	  }, 1000);
 	}
 
 	function processFeatureProperty(feature) {
@@ -192,7 +197,172 @@
 	  }
 	}
 
-	// start();
+
+	function EmojiRain(parentElement) {
+	  this.dropsForDrawing = [];
+
+	  this.drops = 100;
+	  this.active = false;
+	  this.emoji = ['1F62A', '1F634', '1F62B', '1F629', '1F6CF', '1F6CC', '1F4A4', '1F4A4'];
+	  this.totalEmoji = this.emoji.length;
+	  this.imageTransmogrifier = document.createElement('div');
+	  this.useTwemoji = false;
+
+	  this.canvas = document.createElement('canvas');
+
+	  this.context = this.canvas.getContext('2d');
+	  this.context.fillStyle = 'black';
+	  this.parentElement = parentElement;
+	}
+
+
+	EmojiRain.prototype = {
+	  init: function() {
+	    this.resizeWindow();
+	    this.scaleCanvas();
+
+	    var self = this;
+	    window.addEventListener('resize', function() {
+	      self.resizeWindow();
+	    }, false);
+
+	    if (!this.useTwemoji) {
+	      this.generateDrops();
+	    }
+
+	    this.parentElement.appendChild(this.canvas);
+	  },
+
+	  start: function() {
+	    this.resizeWindow();
+	    this.scaleCanvas();
+	    this.active = true;
+	    this.animate();
+	  },
+
+	  stop: function() {
+	    this.active = false;
+	    clearTimeout(this.timeout);
+	    window.cancelAnimationFrame(this.animationFrame);
+	    this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
+	  },
+
+
+	  giveMeARandomEmoji: function() {
+	    var emoji = {};
+	    emoji.code = this.emoji[Math.floor((Math.random() * this.totalEmoji))];
+	    emoji.char = this.fromCodePoint(emoji.code);
+	    // 1 to window size
+	    emoji.x = Math.floor((Math.random() * this.canvas.width) + 1);
+	    emoji.y = Math.floor((Math.random() * this.canvas.height) + 1);
+	    if (this.useTwemoji && this.importedTwemoji) {
+	      this.imageTransmogrifier.innerHTML = twemoji.parse(emoji.char);
+	      emoji.img = this.imageTransmogrifier.childNodes[0];
+	    }
+	    // I am pulling these numbers out of a hat.
+	    emoji.speed = Math.floor(Math.random() * 2 + 1);
+	    emoji.opacity = 1;
+	    emoji.opacitySpeed = 0.005 * (Math.random() * 2 + 1);
+	    return emoji;
+	  },
+
+	  generateDrops: function(number) {
+	    this.dropsForDrawing = [];
+	    for (var i = 0; i < this.drops; i++) {
+	      var emoji = this.giveMeARandomEmoji();
+	      emoji.arrayIndex = i;
+	      this.dropsForDrawing.push(emoji);
+	    }
+	  },
+
+	  addDrops: function(number) {
+	    startLength = this.dropsForDrawing.length
+	    for (var i = 0; i < number; i++) {
+	      var emoji = this.giveMeARandomEmoji();
+	      emoji.arrayIndex = startLength + i;
+	      this.dropsForDrawing.push(emoji);
+	    }
+	  },
+
+	  animate: function() {
+	    var self = this;
+	    var boundAnimate = _.bind(self.animate, self);
+	    self.animationFrame = window.requestAnimationFrame(boundAnimate);
+	    self.context.clearRect(0, 0, self.canvas.width, self.canvas.height);
+	    for (var i = 0; i < self.dropsForDrawing.length; i++) {
+	      self.paintEmoji(self.dropsForDrawing[i]);
+	    }
+	  },
+
+	  paintEmoji: function(emoji) {
+	    if (emoji.y >= this.canvas.height || emoji.opacity < 0.1) {
+	      var i = emoji.arrayIndex;
+	      emoji = this.giveMeARandomEmoji();
+	      emoji.arrayIndex = i;
+	      this.dropsForDrawing[i] = emoji;
+	    }
+	    else {
+	      emoji.y += emoji.speed;
+	      emoji.opacity -= emoji.opacitySpeed;
+	    }
+	    this.context.globalAlpha = emoji.opacity;
+	    var isEven = emoji.arrayIndex % 2;
+	    if (this.useTwemoji && emoji.img && emoji.img != '') {
+	      var size = isEven ? 20 : 30;
+	      this.context.drawImage(emoji.img, emoji.x, emoji.y, size, size);
+	    } else {
+	      this.context.font = isEven ? '20px serif' : '30px serif';
+	      this.context.fillText(emoji.char, emoji.x, emoji.y);
+	    }
+	    this.context.restore();
+	  },
+
+	  resizeWindow: function() {
+	    this.canvas.width = window.innerWidth;
+	    this.canvas.height = window.innerHeight;
+	  },
+
+	  scaleCanvas: function() {
+	    // Finally query the various pixel ratios.
+	    var devicePixelRatio = window.devicePixelRatio || 1;
+	    var backingStoreRatio = this.context.webkitBackingStorePixelRatio ||
+	                        this.context.mozBackingStorePixelRatio ||
+	                        this.context.msBackingStorePixelRatio ||
+	                        this.context.oBackingStorePixelRatio ||
+	                        this.context.backingStorePixelRatio || 1;
+	    var ratio = devicePixelRatio / backingStoreRatio;
+	    // Upscale the canvas if the two ratios don't match.
+	    if (devicePixelRatio !== backingStoreRatio) {
+	        var oldWidth = this.canvas.width;
+	        var oldHeight = this.canvas.height;
+	        this.canvas.width = oldWidth * ratio;
+	        this.canvas.height = oldHeight * ratio;
+	        this.canvas.style.width = oldWidth + 'px';
+	        this.canvas.style.height = oldHeight + 'px';
+	        // Now scale the context to counter the fact that we've manually scaled
+	        // our canvas element.
+	        this.context.scale(ratio, ratio);
+	    }
+	  },
+
+	  fromCodePoint: function(codepoint) {
+	    var code = typeof codepoint === 'string' ?
+	          parseInt(codepoint, 16) : codepoint;
+	    if (code < 0x10000) {
+	      return String.fromCharCode(code);
+	    }
+	    code -= 0x10000;
+	    return String.fromCharCode(
+	      0xD800 + (code >> 10),
+	      0xDC00 + (code & 0x3FF)
+	    );
+	  }
+	};
+
+	var emojiRain = new EmojiRain(canvasContainerDOM);
+	emojiRain.init();
+	emojiRain.start();
+
 
 
 /***/ },
@@ -17252,7 +17422,7 @@
 				"ranking": 5,
 				"latitude": 42.053192,
 				"longitude": -87.676515,
-				"description": "It's in the high sixties outside, and you just exited your last class of day. Next stop: Deering meadow. Lay down on the grass under the trees and take a quick mid day snooze. "
+				"description": "It's in the high sixties outside, and you just exited your last class of day. Next stop: Deering Meadow. Lay down on the grass under the trees and take a quick midday snooze. "
 			},
 			{
 				"url": "http://media.northbynorthwestern.com.s3.amazonaws.com/uploads/2016/11/19/Lakefill.jpg",
@@ -17277,7 +17447,7 @@
 				"ranking": 4,
 				"latitude": 42.053536,
 				"longitude": -87.672655,
-				"description": "Ah, beautiful non-traditional seating in Norris! Beat the rush and take your nap here during the earlier hours of the day. Warning: likely still pretty noisy."
+				"description": "Ah, beautiful non-traditional seating in Norris! Beat the rush and take your nap here during the earlier hours of the day. Warning: no matter what time you go, you'll probably still experience the sounds and smells of Canada Goose-wearing students ordering their daily Peppermint Mochas from Norbucks. "
 			},
 			{
 				"url": "http://media.northbynorthwestern.com.s3.amazonaws.com/uploads/2016/11/19/LIBRARY.jpg",
@@ -17289,12 +17459,12 @@
 				"ranking": 4,
 				"latitude": 42.05316,
 				"longitude": -87.674245,
-				"description": "It happens to the best of us – you tell yourself you'll close your eyes for a few minutes, and you wake up sprawled out on a couch an hour later."
+				"description": "It happens to the best of us–you tell yourself you'll close your eyes for a few minutes, and you wake up sprawled out on a couch an hour later."
 			},
 			{
 				"url": "http://media.northbynorthwestern.com.s3.amazonaws.com/uploads/2016/11/19/Sleeping_in_Tech.jpg",
 				"name": "Tech",
-				"subhead": "Back of a lecture room",
+				"subhead": "Back of a Lecture Room",
 				"credit": "Selah Holland",
 				"Photos in?": "YES",
 				"optimalTime": "Morning",
@@ -17306,8 +17476,8 @@
 			},
 			{
 				"url": "http://media.northbynorthwestern.com.s3.amazonaws.com/uploads/2016/11/19/McTrib_third_floor.jpg",
-				"name": "McTrib ",
-				"subhead": "3rd Floor Couches",
+				"name": "McCormick Foundation Center",
+				"subhead": "Third Floor Couches",
 				"credit": "David Gleisner",
 				"Photos in?": "YES",
 				"optimalTime": "Evening",
@@ -17340,7 +17510,7 @@
 				"ranking": 2,
 				"latitude": 42.051548,
 				"longitude": -87.675896,
-				"description": "Someone's probably guarding it anyways--you can just blend in. But bring multiple parkas—it gets cold out there."
+				"description": "Someone's probably guarding it anyways–you can just blend in. But bring multiple parkas (it gets cold out here)."
 			},
 			{
 				"url": "http://media.northbynorthwestern.com.s3.amazonaws.com/uploads/2016/11/19/Dorm_lounge.jpg",
@@ -17354,7 +17524,8 @@
 			},
 			{
 				"url": "http://media.northbynorthwestern.com.s3.amazonaws.com/uploads/2016/11/19/Annenberg_lounge.jpg",
-				"name": "Annenberg Hall Lounge ",
+				"name": "Annenberg Hall",
+				"subhead": "Lounge",
 				"credit": "Michelle Yun",
 				"Photos in?": "YES",
 				"optimalTime": "Afternoon ",
@@ -17366,11 +17537,12 @@
 			},
 			{
 				"url": "http://media.northbynorthwestern.com.s3.amazonaws.com/uploads/2016/11/19/SPAC_lobby.jpg",
-				"name": "SPAC Lobby",
+				"name": "SPAC",
+				"subhead": "Lobby",
 				"credit": "Mia Zanzucchi",
 				"Photos in?": "YES",
 				"optimalTime": "Night ",
-				"rankingString": "★★",
+				"rankingString": "★",
 				"ranking": 2,
 				"latitude": 42.059366,
 				"longitude": -87.672733,
@@ -17378,8 +17550,8 @@
 			},
 			{
 				"url": "http://media.northbynorthwestern.com.s3.amazonaws.com/uploads/2016/11/19/Shepard_Engagement_Center.jpg",
-				"name": "Shepard Hall Engagement Center",
-				"subhead": "Egg Chairs",
+				"name": "Shepard Hall",
+				"subhead": "Engagement Center Egg Chairs",
 				"credit": "Alex Schwartz",
 				"Photos in?": "YES",
 				"optimalTime": "Afternoon",
@@ -17387,11 +17559,12 @@
 				"ranking": 4,
 				"latitude": 42.050822,
 				"longitude": -87.678971,
-				"description": "Feel like a baby chicken all snuggled up in an egg. Blocks out some sound and you can swing a little bit. But beware if you have motion sickness!"
+				"description": "Feel like a baby chicken all snuggled up in an egg. The egg chairs in the Shepard Engagement Center blocks out some sound and you can swing a little bit. But beware if you are prone to motion sickness!"
 			},
 			{
 				"url": "http://media.northbynorthwestern.com.s3.amazonaws.com/uploads/2016/11/19/The_Garage.jpg",
-				"name": "The Garage ",
+				"name": "SPAC",
+				"subhead": "The Garage ",
 				"credit": "David Gleisner",
 				"Photos in?": "YES",
 				"optimalTime": "Morning",
@@ -17403,7 +17576,7 @@
 			},
 			{
 				"url": "http://media.northbynorthwestern.com.s3.amazonaws.com/uploads/2016/11/19/L_train.jpg",
-				"name": "The Davis L Stop",
+				"name": "The Davis 'L' Stop",
 				"credit": "Paola de Varona",
 				"Photos in?": "YES",
 				"optimalTime": "Night ",
@@ -17411,11 +17584,11 @@
 				"ranking": 4,
 				"latitude": 42.047859,
 				"longitude": -87.683483,
-				"description": "Coming home from a late night out in downtown? You can sneak in the perfect 1 hour nap ride back to Evanston on the L. But beware of missing your stop and slight motion sickness! "
+				"description": "Coming home from a late night out in downtown? You can sneak in the perfect one hour nap back to Evanston on the 'L'. But beware of missing your stop and slight motion sickness! "
 			},
 			{
 				"url": "http://media.northbynorthwestern.com.s3.amazonaws.com/uploads/2016/11/19/Ragenstein.jpg",
-				"name": "Ragenstein Hall",
+				"name": "Regenstein Hall",
 				"credit": "Paola de Varona",
 				"Photos in?": "YES! ",
 				"optimalTime": "Early afternoon",
@@ -17423,7 +17596,7 @@
 				"ranking": 3,
 				"latitude": 42.052189,
 				"longitude": -87.671427,
-				"description": "These comfortable couches are a well kept secret and the view of the lake is unbeatable. But unless you're a Bienen student, you'll have to stake out at the entrance until you can wiggle your way in behind them. But if the sound of several different instruments playing different songs at once isn't your favorite lullaby, you may have a hard time getting some shut eye. "
+				"description": "These comfortable couches are a well-kept secret, and the view of the lake is unbeatable. But unless you're a Bienen student, you'll have to stake out at the entrance until you can wiggle your way in behind one of them. Also, if the sound of several different instruments playing different songs at once isn't your favorite lullaby, you may have a hard time getting some shut eye. "
 			},
 			{
 				"url": "http://media.northbynorthwestern.com.s3.amazonaws.com/uploads/2016/11/19/Francis_Searle.jpg",
@@ -17436,12 +17609,12 @@
 				"ranking": 4,
 				"latitude": 42.058505,
 				"longitude": -87.673607,
-				"description": "This secret crevice on the fist floor of Francis Searle boasts surprisingly cushy couches and is generally quiet except during class change. It's a great little spot for a cat nap if you're too far from home. "
+				"description": "This secret crevice on the first floor of Francis Searle boasts surprisingly cushy couches and is generally quiet except during class change. It's a great little spot for a cat nap if you're too far from home. "
 			},
 			{
 				"url": "http://media.northbynorthwestern.com.s3.amazonaws.com/uploads/2016/11/19/Tech_earth_sciences.jpg",
 				"name": "Tech",
-				"subhead": "Earth and planetary sciences lounge",
+				"subhead": "Earth and Planetary Sciences Lounge",
 				"credit": "David Gleisner",
 				"Photos in?": "YES",
 				"optimalTime": "Early morning ",
